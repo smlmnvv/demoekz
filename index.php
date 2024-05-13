@@ -15,8 +15,7 @@ session_start();
     <main>
         <section class="page my-5">
             <div class="container">
-                <h1 class="mb-5 text-center">Демо экзамен</h1>
-
+                <h1 class="text-center">ИС</h1>
                     <?php require_once 'pages/auth.php' ?>
                     
                     <?php require_once 'pages/reg.php' ?>

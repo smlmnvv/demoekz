@@ -1,6 +1,6 @@
 <div class="row d-flex justify-content-center">
                         <div class="login">
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <form action="vendor/auth.php" method="post">
                                 <p class="fw-bold">Вход в систему</p>
                                 <div class="mb-3">

@@ -1,6 +1,6 @@
 <div class="row d-flex justify-content-center">
                     <div class="reg">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                             <form action="vendor/registration.php" method="post">
                                 <p class="fw-bold">Регистрация</p>
                                 <div class="mb-2">
@@ -23,7 +23,7 @@
                                     <label for="password">Пароль:</label>
                                     <input type="password" id="password" name="password" class="form-control my-2" required>
                                 </div>
-                                <div class="mb-2">
+                                <div class="mb-3">
                                     <label for="password_repeat">Повторите пароль:</label>
                                     <input type="password" id="password_repeat" name="password_repeat" class="form-control my-2" required>
                                 </div>

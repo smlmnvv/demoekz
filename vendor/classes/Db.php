@@ -1,8 +1,10 @@
 <?php
 
+require_once 'Session.php';
+
 $data = require '../config/db_data.php';
 
-class Db
+class Db extends \Classes\Session\Session
 {
     private $connect;
     private $stmt;
@@ -48,19 +50,35 @@ class Db
 
         if($user['password'] == password_verify($data['password'], $user['password']))
         {
-            $_SESSION['user'] = [
-                'id' => $user['id'],
-                'fio' => $user['fio'],
-                'phone' => $user['phone'],
-                'email' => $user['email'],
-            ];
-
-            header ('Location: ../pages/secret.php');
+            $this -> userSession($user);
+            header ('Location: ../pages/main.php');
         }
         else
         {
             die('Вы ввели неверный логин или пароль');
         }
+    }
+
+    public function newStatement(array $data)
+    {
+        $this -> stmt = $this -> connect -> prepare ("INSERT INTO `statements` (userId, carNumber, description) VALUES
+        (?, ?, ?)");
+        if($this -> stmt -> execute([
+            $data['id'],
+            $data['number'],
+            $data['description'],
+        ]))
+        {
+            header('Location: ../pages/main.php');
+        }
+    }
+
+    public function findStatements(int $userId)
+    {
+        $this -> stmt = $this -> connect -> prepare ("SELECT * FROM `statements` WHERE `userId` = ?");
+        $this -> stmt -> execute([$userId]);
+        $result = $this -> stmt -> fetchAll();
+        return $result;
     }
 }
 

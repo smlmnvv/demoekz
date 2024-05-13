@@ -1,3 +1,16 @@
+
+.wrapper
+{
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+.main 
+{
+    flex: 1 1 auto;
+}
+
 .reg
 {
     display: none;
@@ -11,4 +24,25 @@
 .none
 {
     display: none;
+}
+
+.header
+{
+    border-bottom: 2px solid black;
+}
+
+.ul
+{
+    list-style: none;
+    gap: 35px;
+}
+
+.footer
+{
+    background-color: black;
+}
+
+.hero
+{
+    padding: 50px 0;
 }

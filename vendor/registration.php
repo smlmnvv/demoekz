@@ -1,10 +1,10 @@
 <?php
 
 include_once "classes/Db.php";
-include_once "funcs/reg_validate.php";
+include_once "funcs/validate.php";
 
 $post = $_POST;
 
-$data = validate($post);
+$data = regValidate($post);
 
 $db -> reg($data);

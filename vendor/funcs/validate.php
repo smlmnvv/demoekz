@@ -1,6 +1,6 @@
 <?php 
 
-function validate(array $data)
+function regValidate(array $data)
 {
 
     foreach($data as $v)
@@ -37,4 +37,24 @@ function validate(array $data)
 
     return $data;
 
+}
+
+function validate(array $data)
+{
+    foreach($data as $v)
+    {
+        if(empty($v))
+        {
+            die("Пожалуйста, заполните все поля");
+        }
+    }
+
+    foreach($data as $k => $v)
+    {
+        $data[$k] = trim($v);
+        $data[$k] = strip_tags($v);
+        $data[$k] = htmlspecialchars($v);
+    }
+
+    return $data;
 }
