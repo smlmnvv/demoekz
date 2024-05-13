@@ -1,0 +1,14 @@
+.reg
+{
+    display: none;
+}
+
+.active
+{
+    display: block;
+}
+
+.none
+{
+    display: none;
+}
